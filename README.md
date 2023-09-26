@@ -1,4 +1,6 @@
 # Student
+## Implements
+Reportable
 ## Properties
 * `id` - `int` - id of the student
 * `name` - `String` - name of the student
@@ -16,6 +18,8 @@
 * `equals` - checks if two students are equal
 
 # Course
+## Implements
+Reportable
 ## Properties
 * `code` - `String` - code of the course
 * `title` - `String` - title of the course
@@ -59,3 +63,9 @@
 * `reportStudentsWithinTheCourse` - reports the students within a course
 * `reportCoursesOfTheStudent` - reports the courses of a student
 * `generateReports` - generates reports of the university, such as students, courses, students within a course, and courses of a student
+
+# Reportable
+## Methods
+* `report` - reports the object
+## Why is this interface needed?
+This interface marks the classes that implement it as reportable so that the university can generate reports of them.
