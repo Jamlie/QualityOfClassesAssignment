@@ -2,8 +2,6 @@ import jam.com.Course;
 import jam.com.Student;
 import jam.com.University;
 
-import java.io.Serializable;
-
 public class Main {
     public static void main(String[] args) {
         University university = new University();

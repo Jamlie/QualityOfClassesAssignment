@@ -22,34 +22,65 @@ public class Course implements Reportable {
         studentsWithinTheCourse = new ArrayList<Student>();
     }
 
+    /**
+     * <p>Gets the course's code</p>
+     * @return the course's code
+     */
     public String getCode() {
         return code;
     }
 
+    /**
+     * <p>Gets the course's title</p>
+     * @return the course's title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * <p>Gets the course's instructor</p>
+     * @return the course's instructor
+     */
     public String getInstructor() {
         return instructor;
     }
 
+    /**
+     * <p>Gets the course's max capacity</p>
+     * @return the course's max capacity
+     */
     public int getMaxCapacity() {
         return maxCapacity;
     }
 
+    /**
+     * <p>Gets the students who are within the course</p>
+     * @return the students within the course
+     */
     public ArrayList<Student> getStudentsWithinTheCourse() {
         return studentsWithinTheCourse;
     }
 
+    /**
+     * <p>Checks if the course is full</p>
+     * @return true if the course is full, false otherwise
+     */
     public boolean isFull() {
         return studentsWithinTheCourse.size() == maxCapacity;
     }
 
+    /**
+     * <p>Checks if the course is available</p>
+     * @return true if the course is available, false otherwise
+     */
     public boolean isAvailable() {
         return studentsWithinTheCourse.size() < maxCapacity;
     }
 
+    /**
+     * <p>Adds a student to the course</p>
+     */
     public void addStudent(Student student) {
         if (isAvailable()) {
             studentsWithinTheCourse.add(student);
@@ -59,6 +90,9 @@ public class Course implements Reportable {
         System.out.println("Course is full.");
     }
 
+    /**
+     * <p>Removes a student from the course</p>
+     */
     public void removeStudent(Student student) {
         if (studentsWithinTheCourse.contains(student)) {
             studentsWithinTheCourse.remove(student);
@@ -68,6 +102,9 @@ public class Course implements Reportable {
         System.out.println("Student is not in the course.");
     }
 
+    /**
+     * <p>Prints out the current object</p>
+     */
     @Override
     public void report() {
         System.out.println(this);
