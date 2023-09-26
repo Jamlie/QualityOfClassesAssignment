@@ -3,7 +3,11 @@ package jam.com;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Student {
+/**
+ * <h1>Student</h1>
+ * <p>It implements the <code>Reportable</code> interface, thus; should be reported in the University</p>
+ */
+public class Student implements Reportable {
     private final int id;
     private String name;
     private String email;
@@ -16,22 +20,41 @@ public class Student {
         courses = new ArrayList<Course>();
     }
 
+    /**
+     * <p>Gets the student's ID</p>
+     * @return The student's ID
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * <p>Gets the student's name</p>
+     * @return The student's name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * <p>Gets the student's email</p>
+     * @return The student's email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * <p>Gets the student's courses</p>
+     * @return The student's courses
+     */
     public ArrayList<Course> getCourses() {
         return courses;
     }
 
+    /**
+     * <p>Adds a course to the student's courses</p>
+     */
     public void addCourse(Course course) {
         if (courses.contains(course)) {
             System.out.println("Course already exists.");
@@ -41,6 +64,9 @@ public class Student {
         courses.add(course);
     }
 
+    /**
+     * <p>Removes a course from the student's courses</p>
+     */
     public void removeCourse(Course course) {
         if (!courses.contains(course)) {
             System.out.println("Course does not exist.");
@@ -48,6 +74,14 @@ public class Student {
         }
 
         courses.remove(course);
+    }
+
+    /**
+     * <p>Prints out the current object</p>
+     */
+    @Override
+    public void report() {
+        System.out.println(this);
     }
 
     @Override

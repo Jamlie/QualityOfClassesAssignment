@@ -3,7 +3,11 @@ package jam.com;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Course {
+/**
+ * <h1>Course</h1>
+ * <p>It implements the <code>Reportable</code> interface, thus; should be reported in the University</p>
+ */
+public class Course implements Reportable {
     private String code;
     private String title;
     private String instructor;
@@ -62,6 +66,11 @@ public class Course {
         }
 
         System.out.println("Student is not in the course.");
+    }
+
+    @Override
+    public void report() {
+        System.out.println(this);
     }
 
     @Override
