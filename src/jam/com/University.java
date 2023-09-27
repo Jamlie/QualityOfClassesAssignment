@@ -129,8 +129,8 @@ public class University {
             return;
         }
 
-        student.addCourse(course);
-        course.addStudent(student);
+        StudentManager.addCourseToStudent(course, student);
+        CourseManager.addStudentToCourse(student, course);
     }
 
     /**
@@ -154,8 +154,8 @@ public class University {
             return;
         }
 
-        student.removeCourse(course);
-        course.removeStudent(student);
+        StudentManager.removeCourseFromStudent(course, student);
+        CourseManager.removeStudentFromCourse(student, course);
     }
 
     /**
@@ -228,7 +228,6 @@ public class University {
      * <p>Generates all reports</p>
      */
     public void generateReports() {
-        reportStudents();
         reportCourses();
         reportStudentsWithinTheCourse();
         reportCoursesOfTheStudent();

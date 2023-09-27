@@ -53,30 +53,6 @@ public class Student implements Reportable {
     }
 
     /**
-     * <p>Adds a course to the student's courses</p>
-     */
-    public void addCourse(Course course) {
-        if (courses.contains(course)) {
-            System.out.println("Course already exists.");
-            return;
-        }
-
-        courses.add(course);
-    }
-
-    /**
-     * <p>Removes a course from the student's courses</p>
-     */
-    public void removeCourse(Course course) {
-        if (!courses.contains(course)) {
-            System.out.println("Course does not exist.");
-            return;
-        }
-
-        courses.remove(course);
-    }
-
-    /**
      * <p>Prints out the current object</p>
      */
     @Override

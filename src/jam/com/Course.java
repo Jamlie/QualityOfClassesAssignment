@@ -8,7 +8,7 @@ import java.util.Objects;
  * <p>It implements the <code>Reportable</code> interface, thus; should be reported in the University</p>
  */
 public class Course implements Reportable {
-    private String code;
+    private final String code;
     private String title;
     private String instructor;
     private int maxCapacity;
@@ -76,30 +76,6 @@ public class Course implements Reportable {
      */
     public boolean isAvailable() {
         return studentsWithinTheCourse.size() < maxCapacity;
-    }
-
-    /**
-     * <p>Adds a student to the course</p>
-     */
-    public void addStudent(Student student) {
-        if (isAvailable()) {
-            studentsWithinTheCourse.add(student);
-            return;
-        }
-
-        System.out.println("Course is full.");
-    }
-
-    /**
-     * <p>Removes a student from the course</p>
-     */
-    public void removeStudent(Student student) {
-        if (studentsWithinTheCourse.contains(student)) {
-            studentsWithinTheCourse.remove(student);
-            return;
-        }
-
-        System.out.println("Student is not in the course.");
     }
 
     /**
