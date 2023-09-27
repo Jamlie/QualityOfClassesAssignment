@@ -61,24 +61,26 @@ Reportable
 
 ## Methods
 * `addStudent` - adds a student to the university
-* `addStudents` - adds students to the university
-* `removeStudent` - removes a student from the university
-* `removeStudents` - removes students from the university
 * `addCourse` - adds a course to the university
-* `addCourses` - adds courses to the university
-* `removeCourse` - removes a course from the university
-* `removeCourses` - removes courses from the university
 * `registerStudentToCourse` - registers a student to a course
 * `unregisterStudentFromCourse` - unregisters a student from a course
 * `getCourses` - gets the courses of the university
 * `getStudents` - gets the students of the university
-* `reportStudents` - reports the students of the university
+
+# UniversityReporter
+A static class that reports the university, cannot make an instance of it
+## Properties
+* `university` - `University` - university to report
+## Methods
+* `initializeUniversity` - initializes the university via a static method
+* `isUniversityNull` - checks if the university is null
 * `reportCourses` - reports the courses of the university
-* `reportStudentsWithinTheCourse` - reports the students within a course
-* `reportCoursesOfTheStudent` - reports the courses of a student
-* `generateReports` - generates reports of the university, such as students, courses, students within a course, and courses of a student
+* `reportStudentsWithinTheCourse` - reports the students within the course
+* `reportCoursesOfTheStudent` - reports the courses of the student
+* `generateReports` - generates reports of the university
 
 # Reportable
+Interface
 ## Methods
 * `report` - reports the object
 ## Why is this interface needed?

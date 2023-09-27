@@ -12,8 +12,8 @@ public class University {
     ArrayList<Course> courses;
 
     public University() {
-        students = new ArrayList<Student>();
-        courses = new ArrayList<Course>();
+        students = new ArrayList<>();
+        courses = new ArrayList<>();
     }
 
     /**
@@ -30,39 +30,6 @@ public class University {
     }
 
     /**
-     * <p>Adds a list of students to the University</p>
-     * @param students The list of students
-     */
-    public void addStudents(ArrayList<Student> students) {
-        for (Student student : students) {
-            addStudent(student);
-        }
-    }
-
-    /**
-     * <p>Removes a student from the University</p>
-     * @param student The student
-     */
-    public void removeStudent(Student student) {
-        if (!students.contains(student)) {
-            System.out.println("Student does not exist.");
-            return;
-        }
-
-        students.remove(student);
-    }
-
-    /**
-     * <p>Removes a list of students from the University</p>
-     * @param students The list of students
-     */
-    public void removeStudents(ArrayList<Student> students) {
-        for (Student student : students) {
-            removeStudent(student);
-        }
-    }
-
-    /**
      * <p>Adds a course to the University</p>
      * @param course The course
      */
@@ -73,39 +40,6 @@ public class University {
         }
 
         courses.add(course);
-    }
-
-    /**
-     * <p>Adds a list of courses to the University</p>
-     * @param courses The list of courses
-     */
-    public void addCourses(ArrayList<Course> courses) {
-        for (Course course : courses) {
-            addCourse(course);
-        }
-    }
-
-    /**
-     * <p>Removes a course from the University</p>
-     * @param course The course
-     */
-    public void removeCourse(Course course) {
-        if (!courses.contains(course)) {
-            System.out.println("Course does not exist.");
-            return;
-        }
-
-        courses.remove(course);
-    }
-
-    /**
-     * <p>Removes a list of courses from the University</p>
-     * @param courses The list of courses
-     */
-    public void removeCourses(ArrayList<Course> courses) {
-        for (Course course : courses) {
-            removeCourse(course);
-        }
     }
 
     /**
@@ -172,64 +106,5 @@ public class University {
      */
     public ArrayList<Student> getStudents() {
         return students;
-    }
-
-    /**
-     * <p>Reports (prints) all students within the University using the <code>report</code> method that was given by the interface <code>Reportable</code></p>
-     */
-    public void reportStudents() {
-        System.out.println("All students:");
-        System.out.print("[");
-        for (var student : students) {
-            student.report();
-            System.out.print(", ");
-        }
-        System.out.println("]");
-        System.out.println("---------------------------------------------------");
-    }
-
-    /**
-     * <p>Reports (prints) all courses within the University using the <code>report</code> method that was given by the interface <code>Reportable</code></p>
-     */
-    public void reportCourses() {
-        System.out.println("All courses:");
-        System.out.print("[");
-        for (var student : students) {
-            student.report();
-            System.out.print(", ");
-        }
-        System.out.println("]");
-        System.out.println("---------------------------------------------------");
-    }
-
-    /**
-     * <p>Reports (prints) all students who have the course</p>
-     */
-    public void reportStudentsWithinTheCourse() {
-        System.out.println("Students within the course:");
-        for (Course course : courses) {
-            System.out.println(course.getTitle() + ": " + course.getStudentsWithinTheCourse());
-        }
-        System.out.println("---------------------------------------------------");
-    }
-
-    /**
-     * <p>Reports (prints) all courses of the student</p>
-     */
-    public void reportCoursesOfTheStudent() {
-        System.out.println("Courses of the student:");
-        for (Student student : students) {
-            System.out.println(student.getName() + ": " + student.getCourses());
-        }
-        System.out.println("---------------------------------------------------");
-    }
-
-    /**
-     * <p>Generates all reports</p>
-     */
-    public void generateReports() {
-        reportCourses();
-        reportStudentsWithinTheCourse();
-        reportCoursesOfTheStudent();
     }
 }

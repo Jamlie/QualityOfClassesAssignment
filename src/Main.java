@@ -1,10 +1,12 @@
 import jam.com.Course;
 import jam.com.Student;
 import jam.com.University;
+import jam.com.UniversityReporter;
 
 public class Main {
     public static void main(String[] args) {
         University university = new University();
+        UniversityReporter.initializeUniversity(university);
 
         Student studentJamlie = new Student(977, "Jamlie", "jamlee977@outlook.com");
         Student studentOmar = new Student(420, "Omar", "omares977@outlook.com");
@@ -22,7 +24,7 @@ public class Main {
         university.registerStudentToCourse(studentOmar, introToProgramming2);
 
         System.out.println("After registering students to courses:");
-        university.generateReports();
+        UniversityReporter.generateReports();
 
         System.out.println("----------------------------------------");
 
@@ -30,6 +32,6 @@ public class Main {
         university.unregisterStudentFromCourse(studentOmar, introToProgramming2);
 
         System.out.println("After unregistering students from courses:");
-        university.generateReports();
+        UniversityReporter.generateReports();
     }
 }
