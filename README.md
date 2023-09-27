@@ -12,10 +12,17 @@ Reportable
 * `getName` - gets the name of the student
 * `getEmail` - gets the email of the student
 * `getCourses` - gets the courses of the student
-* `addCourse` - adds a course to the student
-* `removeCourse` - removes a course from the student
 * `toString` - returns a string representation of the student
 * `equals` - checks if two students are equal
+
+# StudentManager
+## Methods
+* `addCourseToStudent` - adds a course to a student
+    * `course` - `Course` - course to be added
+    * `student` - `Student` - student to add the course to
+* `removeCourseFromStudent` - remove a course from a student
+    * `course` - `Course` - course to be removed
+    * `student` - `Student` - student to remove the course from
 
 # Course
 ## Implements
@@ -35,10 +42,17 @@ Reportable
 * `getStudentsWithinTheCourse` - gets the students within the course
 * `isFull` - checks if the course is full
 * `isAvailable` - checks if the course is available
-* `addStudent` - adds a student to the course
-* `removeStudent` - removes a student from the course
 * `toString` - returns a string representation of the course
 * `equals` - checks if two courses are equal
+
+# CourseManager
+## Methods
+* `addStudentToCourse` - adds a student to a course
+    * `student` - `Student` - student to be added
+    * `course` - `Course` - course to add the student to
+* `removeStudentFromCourse` - remove a student from a course
+    * `student` - `Student` - student to remove the course from
+    * `course` - `Course` - course to be removed
 
 # University
 ## Properties
