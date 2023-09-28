@@ -5,17 +5,17 @@ package jam.com;
  * <p>A UniversityReporter is used to generate reports off a given university via initializeUniversity</p>
  */
 public class UniversityReporter {
-    private UniversityReporter() {}
-
     private static University university;
     private static Student student;
     private static Course course;
+
+    private UniversityReporter() {}
 
     /**
      * <p>Initializes UniversityReporter.university</p>
      * @param university The university
      */
-    public static void initializeUniversity(University university) {
+    private static void initializeUniversity(University university) {
         UniversityReporter.university = university;
     }
 
@@ -23,7 +23,7 @@ public class UniversityReporter {
      * <p>Initializes UniversityReporter.student</p>
      * @param student The student
      */
-    public static void initializeStudent(Student student) {
+    private static void initializeStudent(Student student) {
         UniversityReporter.student = student;
     }
 
@@ -31,7 +31,7 @@ public class UniversityReporter {
      * <p>Initializes UniversityReporter.course</p>
      * @param course The course
      */
-    public static void initializeCourse(Course course) {
+    private static void initializeCourse(Course course) {
         UniversityReporter.course = course;
     }
 
@@ -62,11 +62,8 @@ public class UniversityReporter {
     /**
      * <p>Reports (prints) all courses within the University using the <code>report</code> method that was given by the interface <code>Reportable</code></p>
      */
-    public static void reportCourses() {
-        if (isUniversityNull()) {
-            System.out.println("University is not initialized. Use UniversityReporter.InitializeUniversity(University university) to initialize it.");
-            return;
-        }
+    public static void reportCourses(University wantedUniversity) {
+        initializeUniversity(wantedUniversity);
 
         System.out.println("Courses:");
         System.out.print("[");
@@ -80,16 +77,8 @@ public class UniversityReporter {
     /**
      * <p>Reports (prints) all students who have the course</p>
      */
-    public static void reportStudentsWithinTheCourse() {
-        if (isUniversityNull()) {
-            System.out.println("University is not initialized. Use UniversityReporter.InitializeUniversity(University university) to initialize it.");
-            return;
-        }
-
-        if (isCourseNull()) {
-            System.out.println("Course is not initialized. Use UniversityReporter.InitializeCourse(Course course) to initialize it.");
-            return;
-        }
+    public static void reportStudentsWithinTheCourse(Course wantedCourse) {
+        initializeCourse(wantedCourse);
 
         System.out.println("Students within the course:");
         System.out.println("[");
@@ -103,16 +92,8 @@ public class UniversityReporter {
     /**
      * <p>Reports (prints) all courses of the student</p>
      */
-    public static void reportCoursesOfTheStudent() {
-        if (isUniversityNull()) {
-            System.out.println("University is not initialized. Use UniversityReporter.InitializeUniversity(University university) to initialize it.");
-            return;
-        }
-
-        if (isStudentNull()) {
-            System.out.println("Student is not initialized. Use UniversityReporter.InitializeStudent(Student student) to initialize it.");
-            return;
-        }
+    public static void reportCoursesOfTheStudent(Student wantedStudent) {
+        initializeStudent(wantedStudent);
 
         System.out.println("Courses of the student:");
         System.out.println("[");
@@ -123,9 +104,12 @@ public class UniversityReporter {
         System.out.println("---------------------------------------------------");
     }
 
-    public static void generateReports() {
-        reportCourses();
-        reportStudentsWithinTheCourse();
-        reportCoursesOfTheStudent();
+    /**
+     * <p>Generates all reports</p>
+     */
+    public static void generateReports(University wantedUniversity, Student wantedStudent, Course wantedCourse) {
+        reportCourses(wantedUniversity);
+        reportStudentsWithinTheCourse(wantedCourse);
+        reportCoursesOfTheStudent(wantedStudent);
     }
 }

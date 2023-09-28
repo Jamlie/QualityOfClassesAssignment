@@ -1,15 +1,16 @@
 package jam.com;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <h1>University</h1>
  */
 public class University {
     /** <p>A list of students within the University</p> */
-    ArrayList<Student> students;
+    List<Student> students;
     /** <p>A list of courses within the University</p> */
-    ArrayList<Course> courses;
+    List<Course> courses;
 
     public University() {
         students = new ArrayList<>();
@@ -96,7 +97,7 @@ public class University {
      * <p>Gets the list of students within the University</p>
      * @return The list of students
      */
-    public ArrayList<Course> getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
@@ -104,7 +105,7 @@ public class University {
      * <p>Gets the list of courses within the University</p>
      * @return The list of courses
      */
-    public ArrayList<Student> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 }
