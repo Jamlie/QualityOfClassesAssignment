@@ -5,8 +5,7 @@ Reportable
 * `id` - `int` - id of the student
 * `name` - `String` - name of the student
 * `email` - `String` - email of the student
-* `courses` - `ArrayList<Course>` - courses of the student
-
+* `courses` - `List<Course>` - courses of the student
 ## Methods
 * `getId` - gets the id of the student
 * `getName` - gets the name of the student
@@ -30,6 +29,16 @@ Reportable
     * `student` - `Student` - student to check
     * `course` - `Course` - course to check
 
+# StudentModel
+## Properties
+* `id` - `int` - id of the student
+* `name` - `String` - name of the student
+* `email` - `String` - email of the student
+## Methods
+* `getId` - gets the id of the student
+* `getName` - gets the name of the student
+* `getEmail` - gets the email of the student
+
 # Course
 ## Implements
 Reportable
@@ -38,7 +47,7 @@ Reportable
 * `title` - `String` - title of the course
 * `instructor` - `String` - instructor of the course
 * `maxStudents` - `int` - maximum number of students in the course
-* `studentsWithinTheCourse` - `ArrayList<Student>` - students within the course
+* `studentsWithinTheCourse` - `List<Student>` - students within the course
 
 ## Methods
 * `getCode` - gets the code of the course
@@ -63,10 +72,22 @@ Reportable
     * `student` - `Student` - student to check
     * `course` - `Course` - course to check
 
+# CourseModel
+## Properties
+* `code` - `String` - code of the course
+* `title` - `String` - title of the course
+* `instructor` - `String` - instructor of the course
+* `maxStudents` - `int` - maximum number of students in the course
+## Methods
+* `getCode` - gets the code of the course
+* `getTitle` - gets the title of the course
+* `getInstructor` - gets the instructor of the course
+* `getMaxStudents` - gets the maximum number of students in the course
+
 # University
 ## Properties
-* `students` - `ArrayList<Student>` - students of the university
-* `courses` - `ArrayList<Course>` - courses of the university
+* `students` - `List<Student>` - students of the university
+* `courses` - `List<Course>` - courses of the university
 
 ## Methods
 * `addStudent` - adds a student to the university

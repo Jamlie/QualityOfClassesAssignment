@@ -1,6 +1,7 @@
 package jam.com;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -12,13 +13,13 @@ public class Course implements Reportable {
     private String title;
     private String instructor;
     private int maxCapacity;
-    private ArrayList<Student> studentsWithinTheCourse;
+    private List<Student> studentsWithinTheCourse;
 
-    public Course(String code, String title, String instructor, int maxCapacity) {
-        this.code = code;
-        this.title = title;
-        this.instructor = instructor;
-        this.maxCapacity = maxCapacity;
+    public Course(CourseModel courseModel) {
+        this.code = courseModel.getCode();
+        this.title = courseModel.getTitle();
+        this.instructor = courseModel.getInstructor();
+        this.maxCapacity = courseModel.getMaxCapacity();
         studentsWithinTheCourse = new ArrayList<>();
     }
 
@@ -58,7 +59,7 @@ public class Course implements Reportable {
      * <p>Gets the students who are within the course</p>
      * @return the students within the course
      */
-    public ArrayList<Student> getStudentsWithinTheCourse() {
+    public List<Student> getStudentsWithinTheCourse() {
         return studentsWithinTheCourse;
     }
 

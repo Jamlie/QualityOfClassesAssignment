@@ -1,6 +1,7 @@
 package jam.com;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -11,12 +12,12 @@ public class Student implements Reportable {
     private final int id;
     private String name;
     private String email;
-    private ArrayList<Course> courses;
+    private List<Course> courses;
 
-    public Student(int id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    public Student(StudentModel studentModel) {
+        this.id = studentModel.getId();
+        this.name = studentModel.getName();
+        this.email = studentModel.getEmail();
         courses = new ArrayList<>();
     }
 
@@ -48,7 +49,7 @@ public class Student implements Reportable {
      * <p>Gets the student's courses</p>
      * @return The student's courses
      */
-    public ArrayList<Course> getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
