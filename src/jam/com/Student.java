@@ -17,7 +17,7 @@ public class Student implements Reportable {
         this.id = id;
         this.name = name;
         this.email = email;
-        courses = new ArrayList<Course>();
+        courses = new ArrayList<>();
     }
 
     /**

@@ -19,7 +19,7 @@ public class Course implements Reportable {
         this.title = title;
         this.instructor = instructor;
         this.maxCapacity = maxCapacity;
-        studentsWithinTheCourse = new ArrayList<Student>();
+        studentsWithinTheCourse = new ArrayList<>();
     }
 
     /**

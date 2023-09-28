@@ -23,6 +23,12 @@ Reportable
 * `removeCourseFromStudent` - remove a course from a student
     * `course` - `Course` - course to be removed
     * `student` - `Student` - student to remove the course from
+* `doesStudentHaveCourse` - Checks if a student has a course
+    * `course` - `Course` - course to check
+    * `student` - `Student` - student to check
+* `doesCourseHaveStudent` - Checks if a course has a student
+    * `student` - `Student` - student to check
+    * `course` - `Course` - course to check
 
 # Course
 ## Implements
@@ -53,6 +59,9 @@ Reportable
 * `removeStudentFromCourse` - remove a student from a course
     * `student` - `Student` - student to remove the course from
     * `course` - `Course` - course to be removed
+* `isStudentInCourse` - Checks if a student is in a course
+    * `student` - `Student` - student to check
+    * `course` - `Course` - course to check
 
 # University
 ## Properties

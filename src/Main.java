@@ -3,8 +3,6 @@ import jam.com.Student;
 import jam.com.University;
 import jam.com.UniversityReporter;
 
-import java.util.LinkedHashSet;
-
 public class Main {
     public static void main(String[] args) {
         University university = new University();

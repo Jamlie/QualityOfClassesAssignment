@@ -72,9 +72,6 @@ public class UniversityReporter {
         System.out.print("[");
         for (var course : university.getCourses()) {
             course.report();
-            if (course != university.getCourses().get(university.getCourses().size() - 1)) {
-                System.out.print(", ");
-            }
         }
         System.out.println("]");
         System.out.println("---------------------------------------------------");
@@ -127,21 +124,6 @@ public class UniversityReporter {
     }
 
     public static void generateReports() {
-        if (isUniversityNull()) {
-            System.out.println("University is not initialized. Use UniversityReporter.InitializeUniversity(University university) to initialize it.");
-            return;
-        }
-
-        if (isCourseNull()) {
-            System.out.println("Course is not initialized. Use UniversityReporter.InitializeCourse(Course course) to initialize it.");
-            return;
-        }
-
-        if (isStudentNull()) {
-            System.out.println("Student is not initialized. Use UniversityReporter.InitializeStudent(Student student) to initialize it.");
-            return;
-        }
-
         reportCourses();
         reportStudentsWithinTheCourse();
         reportCoursesOfTheStudent();
