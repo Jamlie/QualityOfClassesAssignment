@@ -16,18 +16,17 @@ public class CourseManager {
      *               <p>Precondition: The course has not reached the maximum number of students</p>
      */
     public static void addStudentToCourse(Student student, Course course) {
-        if (course.getStudentsWithinTheCourse().contains(student)) {
+        if (isStudentInCourse(student, course)) {
             System.out.println("Student already exists.");
             return;
         }
 
-        if (course.getStudentsWithinTheCourse().size() >= course.getMaxCapacity()) {
+        if (course.isFull()) {
             System.out.println("Course is full.");
             return;
         }
 
         course.getStudentsWithinTheCourse().add(student);
-        student.getCourses().add(course);
     }
 
     /**
@@ -38,12 +37,21 @@ public class CourseManager {
      *               <p>Precondition: The course has not reached the minimum number of students</p>
      */
     public static void removeStudentFromCourse(Student student, Course course) {
-        if (!course.getStudentsWithinTheCourse().contains(student)) {
+        if (!isStudentInCourse(student, course)) {
             System.out.println("Student does not exist.");
             return;
         }
 
         course.getStudentsWithinTheCourse().remove(student);
-        student.getCourses().remove(course);
+    }
+
+    /**
+     * <p>Checks if a student is in a course</p>
+     * @param student The student to check
+     * @param course The course to check
+     * @return True if the student is in the course, false otherwise
+     */
+    private static boolean isStudentInCourse(Student student, Course course) {
+        return course.getStudentsWithinTheCourse().contains(student);
     }
 }

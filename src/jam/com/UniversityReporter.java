@@ -95,7 +95,11 @@ public class UniversityReporter {
         }
 
         System.out.println("Students within the course:");
-        System.out.println(course.getStudentsWithinTheCourse());
+        System.out.println("[");
+        for (var studentInTheCourse : course.getStudentsWithinTheCourse()) { 
+            System.out.print("Id: " + studentInTheCourse.getId() + " Name: " + studentInTheCourse.getName() + ", ");
+        }
+        System.out.println("]");
         System.out.println("---------------------------------------------------");
     }
 
@@ -114,13 +118,27 @@ public class UniversityReporter {
         }
 
         System.out.println("Courses of the student:");
-        System.out.println(student.getCourses());
+        System.out.println("[");
+        for (var courseOfTheStudent : student.getCourses()) {
+            System.out.print("Code: " + courseOfTheStudent.getCode() + " Title: " + courseOfTheStudent.getTitle() + ", ");
+        }
+        System.out.println("]");
         System.out.println("---------------------------------------------------");
     }
 
     public static void generateReports() {
         if (isUniversityNull()) {
             System.out.println("University is not initialized. Use UniversityReporter.InitializeUniversity(University university) to initialize it.");
+            return;
+        }
+
+        if (isCourseNull()) {
+            System.out.println("Course is not initialized. Use UniversityReporter.InitializeCourse(Course course) to initialize it.");
+            return;
+        }
+
+        if (isStudentNull()) {
+            System.out.println("Student is not initialized. Use UniversityReporter.InitializeStudent(Student student) to initialize it.");
             return;
         }
 

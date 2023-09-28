@@ -16,18 +16,17 @@ public class StudentManager {
      *                <p>Precondition: The student has not reached the maximum number of courses</p>
      */
     public static void addCourseToStudent(Course course, Student student) {
-        if (student.getCourses().contains(course)) {
+        if (doesStudentHaveCourse(student, course)) {
             System.out.println("Course already exists.");
             return;
         }
 
-        if (student.getCourses().size() >= 5) {
-            System.out.println("Student has reached the maximum number of courses.");
+        if (doesCourseHaveStudent(course, student)) {
+            System.out.println("Student already exists.");
             return;
         }
 
         student.getCourses().add(course);
-        course.getStudentsWithinTheCourse().add(student);
     }
 
     /**
@@ -38,12 +37,31 @@ public class StudentManager {
      *                <p>Precondition: The student has not reached the minimum number of courses</p>
      */
     public static void removeCourseFromStudent(Course course, Student student) {
-        if (!student.getCourses().contains(course)) {
+        if (!doesStudentHaveCourse(student, course)) {
             System.out.println("Course does not exist.");
             return;
         }
 
         student.getCourses().remove(course);
-        course.getStudentsWithinTheCourse().remove(student);
+    }
+
+    /**
+     * <p>Checks if the student has the course</p>
+     * @param student The student to check
+     * @param course The course to check
+     * @return True if the student has the course, false otherwise
+     */
+    private static boolean doesStudentHaveCourse(Student student, Course course) {
+        return student.getCourses().contains(course);
+    }
+
+    /**
+     * <p>Checks if the course has the student</p>
+     * @param course The course to check
+     * @param student The student to check
+     * @return True if the course has the student, false otherwise
+     */
+    private static boolean doesCourseHaveStudent(Course course, Student student) {
+        return course.getStudentsWithinTheCourse().contains(student);
     }
 }

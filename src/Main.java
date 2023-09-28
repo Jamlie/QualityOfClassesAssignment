@@ -3,6 +3,8 @@ import jam.com.Student;
 import jam.com.University;
 import jam.com.UniversityReporter;
 
+import java.util.LinkedHashSet;
+
 public class Main {
     public static void main(String[] args) {
         University university = new University();
@@ -21,20 +23,21 @@ public class Main {
         university.addCourse(introToProgramming1);
         university.addCourse(introToProgramming2);
 
+
         university.registerStudentToCourse(studentJamlie, introToProgramming1);
         university.registerStudentToCourse(studentJamlie, introToProgramming2);
         university.registerStudentToCourse(studentOmar, introToProgramming1);
         university.registerStudentToCourse(studentOmar, introToProgramming2);
 
-        System.out.println("After registering students to courses:");
-        UniversityReporter.generateReports();
+       System.out.println("After registering students to courses:");
+       UniversityReporter.generateReports();
 
-        System.out.println("----------------------------------------");
+       System.out.println("----------------------------------------");
 
-        university.unregisterStudentFromCourse(studentJamlie, introToProgramming1);
-        university.unregisterStudentFromCourse(studentOmar, introToProgramming2);
+       university.unregisterStudentFromCourse(studentJamlie, introToProgramming1);
+       university.unregisterStudentFromCourse(studentOmar, introToProgramming2);
 
-        System.out.println("After unregistering students from courses:");
-        UniversityReporter.generateReports();
+       System.out.println("After unregistering students from courses:");
+       UniversityReporter.generateReports();
     }
 }
