@@ -1,67 +1,90 @@
 package jam.com;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Course {
-    private String code;
+/**
+ * <h1>Course</h1>
+ * <p>It implements the <code>Reportable</code> interface, thus; should be reported in the University</p>
+ */
+public class Course implements Reportable {
+    private final String code;
     private String title;
     private String instructor;
     private int maxCapacity;
-    private ArrayList<Student> studentsWithinTheCourse;
+    private List<Student> studentsWithinTheCourse;
 
-    public Course(String code, String title, String instructor, int maxCapacity) {
-        this.code = code;
-        this.title = title;
-        this.instructor = instructor;
-        this.maxCapacity = maxCapacity;
-        studentsWithinTheCourse = new ArrayList<Student>();
+    public Course(CourseModel courseModel) {
+        this.code = courseModel.getCode();
+        this.title = courseModel.getTitle();
+        this.instructor = courseModel.getInstructor();
+        this.maxCapacity = courseModel.getMaxCapacity();
+        studentsWithinTheCourse = new ArrayList<>();
     }
 
+    /**
+     * <p>Gets the course's code</p>
+     * @return the course's code
+     */
     public String getCode() {
         return code;
     }
 
+    /**
+     * <p>Gets the course's title</p>
+     * @return the course's title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * <p>Gets the course's instructor</p>
+     * @return the course's instructor
+     */
     public String getInstructor() {
         return instructor;
     }
 
+    /**
+     * <p>Gets the course's max capacity</p>
+     * @return the course's max capacity
+     */
     public int getMaxCapacity() {
         return maxCapacity;
     }
 
-    public ArrayList<Student> getStudentsWithinTheCourse() {
+    /**
+     * <p>Gets the students who are within the course</p>
+     * @return the students within the course
+     */
+    public List<Student> getStudentsWithinTheCourse() {
         return studentsWithinTheCourse;
     }
 
+    /**
+     * <p>Checks if the course is full</p>
+     * @return true if the course is full, false otherwise
+     */
     public boolean isFull() {
         return studentsWithinTheCourse.size() == maxCapacity;
     }
 
+    /**
+     * <p>Checks if the course is available</p>
+     * @return true if the course is available, false otherwise
+     */
     public boolean isAvailable() {
         return studentsWithinTheCourse.size() < maxCapacity;
     }
 
-    public void addStudent(Student student) {
-        if (isAvailable()) {
-            studentsWithinTheCourse.add(student);
-            return;
-        }
-
-        System.out.println("Course is full.");
-    }
-
-    public void removeStudent(Student student) {
-        if (studentsWithinTheCourse.contains(student)) {
-            studentsWithinTheCourse.remove(student);
-            return;
-        }
-
-        System.out.println("Student is not in the course.");
+    /**
+     * <p>Prints out the current object</p>
+     */
+    @Override
+    public void report() {
+        System.out.println(this);
     }
 
     @Override
